@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Match</title>
+    <style>
+        body {
+            background-color: #121212; /* Black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Ye main box hai jo sirf video dikhayega */
+        .video-box {
+            width: 95%; /* Mobile ke hisaab se width */
+            max-width: 800px; /* PC ke liye max width */
+            height: 230px; /* Video ki height (Isko aap apne hisaab se kam/zyada kar sakte ho) */
+            overflow: hidden; /* Ye bahar ke baaki hisse ko cut kar dega */
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+            background: #000;
+        }
+
+        /* Iframe ko bada karke upar shift kiya gaya hai */
+        .video-box iframe {
+            position: absolute;
+            top: -75px; /* Ye upar ka 'DTV HINDI' header chupane ke liye hai */
+            left: 0;
+            width: 100%;
+            height: 800px; /* Iframe ko lamba rakha hai taaki niche ke buttons cut jayein */
+            border: none;
+        }
+
+        /* Agar koi PC me dekhega toh box thoda bada ho jayega */
+        @media (min-width: 768px) {
+            .video-box {
+                height: 450px; 
+            }
+            .video-box iframe {
+                top: -85px; /* PC me header thoda bada ho sakta hai */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-box">
+        <iframe src="https://we-live-v2.pages.dev/live-stream?channel=Star%20Sports%20Hindi" scrolling="no" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
+
